@@ -1,3 +1,4 @@
-*
-!main.cpp
-!.gitignore
+/bin
+/obj
+OOP_Address_Book.*
+Uzytkownicy.txt
