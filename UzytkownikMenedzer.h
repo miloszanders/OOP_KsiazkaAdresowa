@@ -27,6 +27,7 @@ PlikZUzytkownikami plikZUzytkownikami;
 public:
         void rejestracjaUzytkownika();
         void wypiszWszystkichUzytkownikow();
+        void wczytajUzytkownikowZPliku();
 
 };
 
