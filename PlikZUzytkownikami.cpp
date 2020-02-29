@@ -1,14 +1,10 @@
 #include "PlikZUzytkownikami.h"
 #include "MetodyPomocnicze.h"
 
-PlikZUzytkownikami::PlikZUzytkownikami()
-{
-    nazwaPlikuZUzytkownikami="Uzytkownicy.txt";
-}
 
 void PlikZUzytkownikami::dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik)
 {
-
+    fstream plikTekstowy;
     string liniaZDanymiUzytkownika = "";
     plikTekstowy.open(nazwaPlikuZUzytkownikami.c_str(), ios::app);
 
@@ -45,6 +41,7 @@ string PlikZUzytkownikami::zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowym
 
 bool PlikZUzytkownikami::czyPlikJestPusty()
 {
+    fstream plikTekstowy;
     plikTekstowy.seekg(0, ios::end);
     if (plikTekstowy.tellg() == 0)
         return true;
@@ -54,7 +51,7 @@ bool PlikZUzytkownikami::czyPlikJestPusty()
 
 vector <Uzytkownik> PlikZUzytkownikami::wczytajUzytkownikowZPliku()
 {
-
+    fstream plikTekstowy;
     Uzytkownik uzytkownik;
     vector <Uzytkownik> uzytkownicy;
     string daneJednegoUzytkownikaOddzielonePionowymiKreskami = "";
@@ -73,8 +70,9 @@ vector <Uzytkownik> PlikZUzytkownikami::wczytajUzytkownikowZPliku()
     return uzytkownicy;
 }
 
-bool czyPlikJestPusty(fstream &plikTekstowy)
+bool czyPlikJestPusty()
 {
+    fstream plikTekstowy;
     plikTekstowy.seekg(0, ios::end);
     if (plikTekstowy.tellg() == 0)
         return true;
